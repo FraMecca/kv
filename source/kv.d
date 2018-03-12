@@ -86,7 +86,7 @@ void addKey(string filename, string key, string value)
 string getKey(string filename, string key)
 {
 	auto j = getContent(filename);
-	string v = to!string(j[key]);
+	string v = to!string(j[key]).stripJSONDelimiters;
 	return v;
 }
 
